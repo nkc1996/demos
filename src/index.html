@@ -29,20 +29,68 @@
           </div>
           <div class="swiper-pagination"></div>
         </div>
+        <div class="groupBooking">
+          <h3>超值拼团 <span>></span></h3>
+          <div class="wrapper">
+            <div class="content">
+              <dl>
+                <dt><img src="./images/11.png" alt="" /></dt>
+                <dd>
+                  <p class="text">红烧狮子头简食</p>
+                  <p class="newPrice">￥<i>12.9</i> <span>免配送费</span></p>
+                  <p class="danPrice">单买价 <s>33.9</s></p>
+                </dd>
+              </dl>
+              <dl>
+                <dt><img src="./images/11.png" alt="" /></dt>
+                <dd>
+                  <p class="text">红烧狮子头简食</p>
+                  <p class="newPrice">￥<i>12.9</i> <span>免配送费</span></p>
+                  <p class="danPrice">单买价 <s>33.9</s></p>
+                </dd>
+              </dl>
+              <dl>
+                <dt><img src="./images/11.png" alt="" /></dt>
+                <dd>
+                  <p class="text">红烧狮子头简食</p>
+                  <p class="newPrice">￥<i>12.9</i> <span>免配送费</span></p>
+                  <p class="danPrice">单买价 <s>33.9</s></p>
+                </dd>
+              </dl>
+              <dl>
+                <dt><img src="./images/11.png" alt="" /></dt>
+                <dd>
+                  <p class="text">红烧狮子头简食</p>
+                  <p class="newPrice">￥<i>12.9</i> <span>免配送费</span></p>
+                  <p class="danPrice">单买价 <s>33.9</s></p>
+                </dd>
+              </dl>
+              <dl>
+                <dt><img src="./images/11.png" alt="" /></dt>
+                <dd>
+                  <p class="text">红烧狮子头简食</p>
+                  <p class="newPrice">￥<i>12.9</i> <span>免配送费</span></p>
+                  <p class="danPrice">单买价 <s>33.9</s></p>
+                </dd>
+              </dl>
+              <div class="gengduo"><p>点击查看更多</p></div>
+            </div>
+          </div>
+        </div>
       </main>
       <footer class="footer">
-          <dl class="current">
-              <dt> <img src="./images/14.png" alt=""></dt>
-              <dd> 首页</dd>
-          </dl>
-          <dl>
-                <dt> <img src="./images/15.png" alt=""></dt>
-                <dd> 订单</dd>
-            </dl>
-            <dl>
-                    <dt> <img src="./images/16.png" alt=""></dt>
-                    <dd> 我的</dd>
-                </dl>
+        <dl class="current">
+          <dt><img src="./images/14.png" alt="" /></dt>
+          <dd>首页</dd>
+        </dl>
+        <dl>
+          <dt><img src="./images/15.png" alt="" /></dt>
+          <dd>订单</dd>
+        </dl>
+        <dl>
+          <dt><img src="./images/16.png" alt="" /></dt>
+          <dd>我的</dd>
+        </dl>
       </footer>
     </div>
     <script src="./scripts/ajax.js"></script>
@@ -50,6 +98,9 @@
     <script src="./scripts/bscroll.min.js"></script>
     <script src="./scripts/swiper.min.js"></script>
     <script>
+        var bscroll=new BScroll('.wrapper',{
+            scrollX:true,
+        })
       var swiper = new Swiper(".swiper-container", {
         loop: true,
         pagination: {
@@ -76,13 +127,16 @@
           $(".main-list").append(html);
         });
       }
-      var dl=document.querySelectorAll('dl');
-     
-      dl.forEach(function(file,index){
-          file.onclick=function(){
-           $(this).addClass("current").siblings().removeClass('current')
-          }
-      })
+      var dl = document.querySelectorAll("dl");
+
+      dl.forEach(function(file, index) {
+        file.onclick = function() {
+          $(this)
+            .addClass("current")
+            .siblings()
+            .removeClass("current");
+        };
+      });
     </script>
   </body>
 </html>

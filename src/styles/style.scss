@@ -3,34 +3,42 @@
 
 $font-size:37.5px !default;
 
-@function rem($px){
+@function rem($px) {
     @return $px/$font-size*1rem;
 }
-html,body{
+*{
+    box-sizing: border-box;
+}
+html,
+body {
     width: 100%;
     height: 100%;
 }
-.container{
+
+.container {
     width: 100%;
     height: 100%;
     padding: rem(5px);
     display: flex;
     flex-direction: column;
 }
-.header{
+
+.header {
     width: 100%;
     height: rem(40px);
     display: flex;
     align-items: center;
-  
-    h2{
-        flex:7;
+
+    h2 {
+        flex: 7;
         font-size: 18px;
-        font-weight:900;
+        font-weight: 900;
     }
-    p{
-        flex:3;
-        img{
+
+    p {
+        flex: 3;
+
+        img {
             width: 80%;
             display: flex;
             justify-content: center;
@@ -38,21 +46,25 @@ html,body{
         }
     }
 }
-.main{
+
+.main {
     width: 100%;
     flex: 1;
     overflow: auto;
-    .search{
+
+    .search {
         width: 100%;
-        height:rem(50px);
+        height: rem(50px);
         position: relative;
-        i{
+
+        i {
             position: absolute;
             top: 15px;
             left: 15px;
             background: #d6d6d6;
         }
-        input{
+
+        input {
             width: 95%;
             height: 100%;
             font-size: 16px;
@@ -61,7 +73,50 @@ html,body{
             text-indent: 1rem;
         }
     }
-}
-.footer{
+
+    .swiper-container {
+        width: 100%;
+        height: rem(220px);
+
+        .swiper-wrapper {
+            width: 100%;
+            height: 100%;
+
+            .swiper-slide {
+                width: 100%;
+                height: 100%;
+                .main-list {
+                    width: 100%;
+                    height: rem(200px);
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    dl {
+                        width: 19%;
+                        margin-top: rem(10px);
+                        padding: rem(1px);
+
+                        dt {
+                            width: 100%;
+                            text-align: center;
+
+                            img {
+                                width: 80%;
+
+                            }
+                        }
+
+                        dd {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+        .swiper-pagination-bullets{
+        }
+    }
 
 }
+
+.footer {}

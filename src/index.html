@@ -1,28 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/swiper.min.css">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/swiper.min.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <script src="./scripts/flexiable.js"></script>
-    <link rel="stylesheet" href="./font/fonts/iconfont.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./font/fonts/iconfont.css" />
+  </head>
+
+  <body>
     <div class="container">
-        <header class="header">
-            <h2>美团外卖</h2>
-            <p> <img src="./images/0.png" alt=""></p>
-        </header>
-        <main class="main">
-            <div class="search">
-                <i class="iconfont icon-fangdajing"></i>
-                <input type="text" placeholder="米线">
-            </div>
-        </main>
-        <footer class="footer"></footer>
+      <header class="header">
+        <h2>美团外卖</h2>
+        <p><img src="./images/0.png" alt="" /></p>
+      </header>
+      <main class="main">
+        <div class="search">
+          <i class="iconfont icon-fangdajing"></i>
+          <input type="text" placeholder="米线" />
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><div class="main-list"></div></div>
+            <div class="swiper-slide"><div class="main-list"></div></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </main>
+      <footer class="footer"></footer>
     </div>
-</body>
+    <script src="./scripts/ajax.js"></script>
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/bscroll.min.js"></script>
+    <script src="./scripts/swiper.min.js"></script>
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination"
+        }
+      });
+      $.ajax({
+        url: "./data/data.json",
+        type: "get",
+        dataType: "json",
+        success: function(data) {
+          filter(data);
+        }
+      });
+
+      function filter(data) {
+        console.log(data);
+        $.each(data, function(val, i) {
+          var html = "";
+          html = `<dl>
+                    <dt><img src="./images/${i.img}" alt=""> </dt>
+                    <dd>${i.name}</dd>
+                </dl>`;
+          $(".main-list").append(html);
+        });
+      }
+    </script>
+  </body>
 </html>

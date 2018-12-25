@@ -30,7 +30,20 @@
           <div class="swiper-pagination"></div>
         </div>
       </main>
-      <footer class="footer"></footer>
+      <footer class="footer">
+          <dl class="current">
+              <dt> <img src="./images/14.png" alt=""></dt>
+              <dd> 首页</dd>
+          </dl>
+          <dl>
+                <dt> <img src="./images/15.png" alt=""></dt>
+                <dd> 订单</dd>
+            </dl>
+            <dl>
+                    <dt> <img src="./images/16.png" alt=""></dt>
+                    <dd> 我的</dd>
+                </dl>
+      </footer>
     </div>
     <script src="./scripts/ajax.js"></script>
     <script src="./scripts/jquery.min.js"></script>
@@ -63,6 +76,13 @@
           $(".main-list").append(html);
         });
       }
+      var dl=document.querySelectorAll('dl');
+     
+      dl.forEach(function(file,index){
+          file.onclick=function(){
+           $(this).addClass("current").siblings().removeClass('current')
+          }
+      })
     </script>
   </body>
 </html>

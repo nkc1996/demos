@@ -28,7 +28,6 @@ body {
     height: rem(40px);
     display: flex;
     align-items: center;
-
     h2 {
         flex: 7;
         font-size: 18px;
@@ -119,4 +118,27 @@ body {
 
 }
 
-.footer {}
+.footer {
+    width: 100%;
+    height: rem(50px);
+    display: flex;
+    dl{
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #d6d6d6;
+        dt{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 50%;
+            }
+        }
+    }
+    .current{
+        color: #000;
+    }
+}

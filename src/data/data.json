@@ -1,33 +1,33 @@
 [{
         "img": "1.png",
-        "name": ""
+        "name": "美食"
     },
     {
         "img": "2.png",
-        "name": ""
+        "name": "超市便利"
     }, {
         "img": "3.png",
-        "name": ""
+        "name": "生鲜果蔬"
     }, {
         "img": "4.png",
-        "name": ""
+        "name": "美团专送"
     }, {
         "img": "5.png",
-        "name": ""
+        "name": "跑腿代购"
     }, {
         "img": "6.png",
-        "name": ""
+        "name": "早餐"
     }, {
         "img": "7.png",
-        "name": ""
+        "name": "甜点饮品"
     }, {
         "img": "8.png",
-        "name": ""
+        "name": "家常菜"
     }, {
         "img": "9.png",
-        "name": ""
+        "name": "减免配送费"
     }, {
         "img": "10.png",
-        "name": ""
+        "name": "品牌连锁"
     }
 ]

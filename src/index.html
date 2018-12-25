@@ -33,6 +33,7 @@
           <h3>超值拼团 <span>></span></h3>
           <div class="wrapper">
             <div class="content">
+            
               <dl>
                 <dt><img src="./images/11.png" alt="" /></dt>
                 <dd>
@@ -57,23 +58,7 @@
                   <p class="danPrice">单买价 <s>33.9</s></p>
                 </dd>
               </dl>
-              <dl>
-                <dt><img src="./images/11.png" alt="" /></dt>
-                <dd>
-                  <p class="text">红烧狮子头简食</p>
-                  <p class="newPrice">￥<i>12.9</i> <span>免配送费</span></p>
-                  <p class="danPrice">单买价 <s>33.9</s></p>
-                </dd>
-              </dl>
-              <dl>
-                <dt><img src="./images/11.png" alt="" /></dt>
-                <dd>
-                  <p class="text">红烧狮子头简食</p>
-                  <p class="newPrice">￥<i>12.9</i> <span>免配送费</span></p>
-                  <p class="danPrice">单买价 <s>33.9</s></p>
-                </dd>
-              </dl>
-              <div class="gengduo"><p>点击查看更多</p></div>
+              <div class="gengduo" id="btn"><p >点击查看更多</p></div>
             </div>
           </div>
         </div>
@@ -100,6 +85,7 @@
     <script>
         var bscroll=new BScroll('.wrapper',{
             scrollX:true,
+            click: true 
         })
       var swiper = new Swiper(".swiper-container", {
         loop: true,
@@ -117,7 +103,6 @@
       });
 
       function filter(data) {
-        console.log(data);
         $.each(data, function(val, i) {
           var html = "";
           html = `<dl>
@@ -137,6 +122,23 @@
             .removeClass("current");
         };
       });
+     var w=$('.content').width();
+     
+      $('#btn').on('click',function(){
+          var html=` <dl>
+                <dt><img src="./images/11.png" alt="" /></dt>
+                <dd>
+                  <p class="text">红烧狮子头简食</p>
+                  <p class="newPrice">￥<i>12.9</i> <span>免配送费</span></p>
+                  <p class="danPrice">单买价 <s>33.9</s></p>
+                </dd>
+              </dl>`;
+        w=w+100;
+        $(".content").prepend(html);
+        $(".content").css("width",w);
+        console.log($('.content').width())
+
+      })
     </script>
   </body>
 </html>
